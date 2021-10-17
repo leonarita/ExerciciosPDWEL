@@ -8,18 +8,20 @@
 
         for($i = 2; $i <= $number; $i++) {
 
-            while($j <= $i/2) {
+            do {
                 if($i % $j == 0) {
                     $isPrime = false;
                     break;
                 }
                 $j++;
             }
+            while($j-1 <= $i/2);
 
             if($isPrime == true) {
                 array_push($array, $i);
             }
             $isPrime = true;
+            $j = 2;
         }
 
         print_r ($array);
